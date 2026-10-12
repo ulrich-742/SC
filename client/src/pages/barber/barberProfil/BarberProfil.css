@@ -1,0 +1,205 @@
+.barber-profil-page {
+  display: grid;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 1180px;
+  min-width: 0;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 5rem;
+  background: var(--gray-50);
+}
+
+/* ── Tabs ── */
+
+.barber-profil__tabs {
+  display: flex;
+  border-bottom: 1px solid var(--gray-300);
+}
+
+.barber-profil__tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  padding: 0.75rem;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-600);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: var(--transition);
+}
+
+.barber-profil__tab-icon {
+  font-size: 1rem;
+}
+
+.barber-profil__tab--active {
+  color: var(--gold-dark);
+  border-bottom: 2px solid var(--gold-dark);
+  font-weight: 600;
+}
+
+/* ── Avatar placeholder (pas de photo) ── */
+
+.barber-profil__avatar-placeholder {
+  width: clamp(8rem, 28vw, 10.5rem);
+  height: clamp(8rem, 28vw, 10.5rem);
+  border-radius: 50%;
+  background: var(--gold-soft);
+  color: var(--gold-dark);
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid var(--white);
+  box-shadow: 0 14px 32px rgba(15, 15, 17, 0.18);
+}
+
+/* ── Galerie ── */
+
+.barber-profil__galerie {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4rem;
+}
+
+.barber-profil__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.25rem;
+}
+
+.barber-profil__grid-item-wrapper {
+  position: relative;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.barber-profil__grid-item-wrapper--selected::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(168, 124, 53, 0.5);
+  border: 3px solid var(--gold-dark);
+  border-radius: var(--radius-sm);
+}
+
+.barber-profil__grid-item {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+}
+
+.barber-profil__galerie-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-top: 1px solid var(--gray-300);
+  margin-top: 0.75rem;
+}
+
+.barber-profil__add-btn,
+.barber-profil__delete-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.barber-profil__add-btn {
+  color: var(--gold-dark);
+  font-weight: 600;
+}
+
+.barber-profil__delete-btn {
+  color: var(--error);
+  font-weight: 600;
+}
+
+.barber-profil__delete-btn--confirm {
+  background-color: var(--error);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+}
+
+.barber-profil__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--gray-600);
+}
+
+/* ── Desktop ── */
+
+@media (min-width: 768px) {
+  .barber-profil-page {
+    gap: 1.5rem;
+    padding: 2rem 1.5rem 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .barber-profil-page {
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 19rem);
+    grid-template-areas:
+      "tabs tabs"
+      "header header"
+      "info actions";
+    align-items: start;
+    align-content: start;
+    gap: 1.75rem;
+    padding: 3rem 2rem 6rem;
+  }
+
+  .barber-profil__tabs {
+    grid-area: tabs;
+  }
+
+  .profile-header {
+    grid-area: header;
+  }
+
+  .profile-info {
+    grid-area: info;
+  }
+
+  .profile-actions {
+    grid-area: actions;
+    justify-self: stretch;
+  }
+}
+
+.barber-profil__toast {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: #2d6a4f;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}

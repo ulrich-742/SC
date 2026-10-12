@@ -1,0 +1,178 @@
+.userProfilCard-main {
+  width: 100%;
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 20px 10px 20px 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  gap: 30px;
+  h2 {
+    font-family: var(--font-title);
+    font-size: 16px;
+    color: var(--black);
+    padding-left: 10px;
+  }
+  .userProfilCard-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    .userProfilCard-avatar {
+      width: 40%;
+      border-radius: 50%;
+    }
+    h3 {
+      font-family: var(--font-title);
+      font-size: 16px;
+      color: var(--black);
+    }
+    p {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--gray-600);
+    }
+  }
+  .userProfilCard-info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    span {
+      display: flex;
+      align-items: center;
+      font-family: var(--font-body);
+      font-size: 16px;
+      .userProfilCard-info-icon {
+        color: var(--gold);
+        padding: 10px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  .userProfilCard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    background-color: var(--gray-100);
+    gap: 1px;
+    overflow: hidden;
+    .userProfilCard-grid-case {
+      height: 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      background-color: var(--white);
+      span {
+        font-family: var(--font-body);
+        font-size: 16px;
+      }
+      p {
+        font-family: var(--font-body);
+        font-size: 12px;
+        color: var(--gray-600);
+      }
+    }
+  }
+  .userProfilCard-action {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    h2 {
+      font-family: var(--font-title);
+      font-size: 18px;
+      color: var(--black);
+    }
+    .userProfilCard-action-button {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-size: 16px;
+      padding: 10px 10px 10px 10px;
+      gap: 15px;
+      border: 1px solid var(--gray-300);
+      border-radius: var(--radius-md);
+      color: var(--gray-900);
+      background-color: var(--white);
+      transition: var(--transition);
+      svg {
+        color: var(--gray-600);
+        transition: var(--transition);
+      }
+
+      &:hover {
+        background: var(--gold-soft);
+        border-color: var(--gold);
+        color: var(--gold-dark);
+
+        svg {
+          color: var(--gold-dark);
+        }
+      }
+
+      &.suspend-btn {
+        background: var(--white);
+        border-color: var(--warning);
+        color: var(--warning);
+
+        svg {
+          color: var(--warning);
+        }
+
+        &:hover {
+          background: var(--warning);
+          color: var(--white);
+
+          svg {
+            color: var(--white);
+          }
+        }
+      }
+      &.active-btn {
+        background: var(--white);
+        border-color: var(--success);
+        color: var(--success);
+
+        svg {
+          color: var(--success);
+        }
+
+        &:hover {
+          background: var(--success);
+          color: var(--white);
+
+          svg {
+            color: var(--white);
+          }
+        }
+      }
+
+      &.delete-btn {
+        background: var(--white);
+        border-color: var(--error);
+        color: var(--error);
+
+        svg {
+          color: var(--error);
+        }
+
+        &:hover {
+          background: var(--error);
+          color: var(--white);
+
+          svg {
+            color: var(--white);
+          }
+        }
+      }
+    }
+  }
+}

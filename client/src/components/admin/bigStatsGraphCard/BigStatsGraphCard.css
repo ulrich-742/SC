@@ -1,0 +1,50 @@
+.BigStatsGraphCard-main {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  width: 60%;
+  height: auto;
+  min-height: 10rem;
+  box-shadow: var(--shadow-sm);
+
+  .BigStatsGraphCard-upper {
+    h2 {
+      font-family: var(--font-title);
+      font-size: 18px;
+      color: var(--black);
+      margin-left: 20px;
+    }
+  }
+
+  .BigStatsGraphCard-graph {
+    width: 100%;
+    height: 200px;
+    margin-top: 10px;
+  }
+
+  .BigStatsGraphCard-tooltip-box {
+    background-color: var(--white);
+    border: 1px solid var(--gray-100);
+    padding: 8px 12px;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+
+    .BigStatsGraphCard-tooltip-date {
+      font-size: 11px;
+      color: var(--gray-300);
+      margin: 0 0 2px 0;
+    }
+
+    .BigStatsGraphCard-tooltip-value {
+      font-size: 13px;
+      color: var(--black);
+      margin: 0;
+
+      strong {
+        font-weight: 600;
+        color: var(--black);
+      }
+    }
+  }
+}

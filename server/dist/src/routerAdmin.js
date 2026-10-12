@@ -1,0 +1,35 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const routerAdmin = express_1.default.Router();
+const verifyAdmin_1 = require("./middleware/verifyAdmin");
+const verifyToken_1 = require("./middleware/verifyToken");
+const validateImageUpload_1 = require("./middleware/validateImageUpload");
+const adminDashboardAction_1 = __importDefault(require("./modules/adminDashboard/adminDashboardAction"));
+const appointmentActions_1 = __importDefault(require("./modules/appointment/appointmentActions"));
+const barberActions_1 = __importDefault(require("./modules/barber/barberActions"));
+const customerActions_1 = __importDefault(require("./modules/customer/customerActions"));
+const eventActions_1 = __importDefault(require("./modules/event/eventActions"));
+const eventUpload_1 = require("./modules/event/eventUpload");
+const reviewActions_1 = __importDefault(require("./modules/review/reviewActions"));
+const userActions_1 = __importDefault(require("./modules/user/userActions"));
+routerAdmin.use(verifyToken_1.verifyToken, verifyAdmin_1.verifyAdmin);
+routerAdmin.get("/dashboard", adminDashboardAction_1.default.browse);
+routerAdmin.get("/appointmentsdetails", appointmentActions_1.default.browseforadmin);
+routerAdmin.get("/appointments", appointmentActions_1.default.browse);
+routerAdmin.get("/barbers", barberActions_1.default.browse);
+routerAdmin.put("/barbers/:id", barberActions_1.default.edit);
+routerAdmin.delete("/users/:id", userActions_1.default.deleteUser);
+routerAdmin.post("/events", eventUpload_1.uploadEventImage.single("image"), validateImageUpload_1.validateImageUpload, eventActions_1.default.add);
+routerAdmin.put("/events/:id", eventUpload_1.uploadEventImage.single("image"), validateImageUpload_1.validateImageUpload, eventActions_1.default.edit);
+routerAdmin.delete("/events/:id", eventActions_1.default.destroy);
+routerAdmin.get("/customers", customerActions_1.default.browse);
+routerAdmin.put("/customers/:id", customerActions_1.default.edit);
+routerAdmin.get("/reviews", reviewActions_1.default.browse);
+routerAdmin.delete("/reviews/:id", reviewActions_1.default.destroy);
+routerAdmin.get("/reviewsdetails", reviewActions_1.default.browseforadmin);
+exports.default = routerAdmin;
+//# sourceMappingURL=routerAdmin.js.map

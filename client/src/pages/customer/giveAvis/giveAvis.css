@@ -1,0 +1,322 @@
+.give-avis {
+  background-color: var(--white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 1.25rem 2rem;
+  margin-bottom: 5rem;
+}
+
+/* ── Header ── */
+
+.give-avis__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.give-avis__title {
+  font-family: var(--font-title);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.give-avis__subtitle {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  line-height: 1.5;
+  margin-top: -0.75rem;
+}
+
+/* ── Barber card ── */
+
+.give-avis__barber-card {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 1rem;
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-md);
+  background-color: var(--gray-50);
+}
+
+.give-avis__barber-avatar {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.give-avis__barber-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.give-avis__barber-name {
+  font-family: var(--font-title);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.give-avis__barber-prestation {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--gray-600);
+}
+
+.give-avis__barber-date {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+/* ── Star rating ── */
+
+.give-avis__rating-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.give-avis__rating-label {
+  font-family: var(--font-title);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--black);
+  align-self: flex-start;
+}
+
+.give-avis__stars {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.give-avis__star-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+}
+
+.give-avis__star--active {
+  color: var(--warning);
+}
+
+.give-avis__star--empty {
+  color: var(--gray-200);
+}
+
+.give-avis__rating-value {
+  font-family: var(--font-title);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--black);
+}
+
+/* ── Comment ── */
+
+.give-avis__comment-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.give-avis__label {
+  font-family: var(--font-title);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.give-avis__textarea {
+  width: 100%;
+  height: 7rem;
+  padding: 0.75rem;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--black);
+  resize: none;
+  outline: none;
+  background-color: var(--white);
+  box-sizing: border-box;
+}
+
+.give-avis__textarea:focus {
+  border-color: var(--gold-dark);
+}
+
+.give-avis__counter {
+  align-self: flex-end;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--gray-400);
+}
+
+/* ── Photos ── */
+
+.give-avis__photos-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.give-avis__photos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+
+.give-avis__photo-wrapper {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  border-radius: var(--radius-md);
+  overflow: visible;
+}
+
+.give-avis__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.give-avis__photo-remove {
+  position: absolute;
+  top: -0.375rem;
+  right: -0.375rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: var(--black);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.give-avis__photo-add {
+  width: 5rem;
+  height: 5rem;
+  border: 1.5px dashed var(--gray-300);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  color: var(--gray-500);
+}
+
+.give-avis__photo-add-icon {
+  color: var(--gray-400);
+}
+
+/* ── Toggle ── */
+
+.give-avis__toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-md);
+}
+
+.give-avis__toggle-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.give-avis__toggle-label {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--black);
+}
+
+.give-avis__toggle-name {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+}
+
+.give-avis__toggle {
+  width: 2.75rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  background-color: var(--gray-200);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s;
+  flex-shrink: 0;
+}
+
+.give-avis__toggle--on {
+  background-color: var(--gold-dark);
+}
+
+.give-avis__toggle-thumb {
+  position: absolute;
+  top: 0.1875rem;
+  left: 0.1875rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  background-color: var(--white);
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.give-avis__toggle--on .give-avis__toggle-thumb {
+  transform: translateX(1.25rem);
+}
+
+/* ── Info ── */
+
+.give-avis__info {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--gray-400);
+  text-align: center;
+}
+
+/* ── Submit ── */
+
+.give-avis__submit {
+  width: 100%;
+  padding: 0.875rem;
+  background-color: var(--gold-dark);
+  color: var(--white);
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.give-avis__submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

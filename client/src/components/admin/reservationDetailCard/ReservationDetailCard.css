@@ -1,0 +1,121 @@
+.reservationdetailcard-main {
+  width: 100%;
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 20px 10px 32px 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  gap: 32px;
+  .reservationdetailcard-title {
+    display: flex;
+    justify-content: space-around;
+    h2 {
+      font-family: var(--font-title);
+      font-size: 16px;
+      color: var(--black);
+      padding-left: 10px;
+    }
+    .reservationdetailcard-status {
+      display: flex;
+      margin-left: 20px;
+      align-items: center;
+      padding: 5px 10px 5px 10px;
+      width: max-content;
+      border-radius: var(--radius-md);
+      text-transform: capitalize;
+      font-family: var(--font-body);
+      font-size: 14px;
+      &.status-confirmé {
+        color: var(--success);
+        background-color: #e6f4ea;
+      }
+      &.status-annulé {
+        color: var(--error);
+        background-color: #fef2f2;
+      }
+      &.status-en {
+        color: var(--warning);
+        background-color: #fffbeb;
+      }
+      &.status-terminé {
+        color: var(--info);
+        background-color: #eff6ff;
+      }
+    }
+  }
+  .reservationdetailcard-header {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    gap: 20px;
+    padding-bottom: 32px;
+    align-items: center;
+
+    h3 {
+      font-family: var(--font-title);
+      font-size: 14px;
+      color: var(--black);
+    }
+    .reservationdetailcard-user-info {
+      display: flex;
+      width: 100%;
+      gap: 16px;
+      align-items: center;
+
+      .reservationdetailcard-avatar {
+        width: 16%;
+        border-radius: 50%;
+      }
+      .reservationdetailcard-user-info-text {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        p {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          font-family: var(--font-body);
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .reservationdetailcard-prestation-contener {
+    display: flex;
+    font-family: var(--font-body);
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 14px;
+    gap: 16px;
+    padding-left: 10px;
+
+    .reservationdetailcard-prestation-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 38%;
+      padding: 10px 10px 10px 10px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      .reservationdetailcard-prestation-info-icon {
+        font-size: 24px;
+        flex-shrink: 0;
+        color: var(--gold);
+      }
+      .reservationdetailcard-prestation-info-text {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        span {
+          color: var(--gray-600);
+        }
+      }
+    }
+    & .full-width {
+      justify-content: center;
+      width: 90%;
+    }
+  }
+}

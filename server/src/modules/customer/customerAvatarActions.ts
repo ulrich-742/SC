@@ -1,0 +1,53 @@
+import fs from "node:fs";
+import path from "node:path";
+import { randomUUID } from "node:crypto";
+import type { RequestHandler } from "express";
+import multer from "multer";
+import databaseClient from "../../../database/client";
+
+const uploadsDir = path.join(
+  __dirname,
+  "../../../../server/public/uploads/avatars",
+);
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir, { recursive: true });
+}
+
+const storage = multer.diskStorage({
+  destination: (_req, _file, cb) => {
+    cb(null, uploadsDir);
+  },
+  filename: (req, file, cb) => {
+    const ext = path.extname(file.originalname).toLowerCase();
+    cb(null, `user-${req.params.id}-${randomUUID()}${ext}`);
+  },
+});
+
+export const upload = multer({
+  storage,
+  limits: { fileSize: 5 * 1024 * 1024 },
+  fileFilter: (_req, file, cb) => {
+    const allowed = ["image/jpeg", "image/png", "image/webp"];
+    cb(null, allowed.includes(file.mimetype));
+  },
+});
+
+export const uploadCustomerAvatar: RequestHandler = async (req, res, next) => {
+  try {
+    if (!req.file) {
+      res.status(400).json({ error: "Aucun fichier fourni" });
+      return;
+    }
+    const userId = Number(req.params.id);
+    const avatarUrl = `/uploads/avatars/${req.file.filename}`;
+
+    await databaseClient.query(
+      "UPDATE users SET avatar_url = ? WHERE id_user = ?",
+      [avatarUrl, userId],
+    );
+
+    res.json({ avatar_url: avatarUrl });
+  } catch (err) {
+    next(err);
+  }
+};

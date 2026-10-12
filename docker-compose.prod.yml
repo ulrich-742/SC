@@ -1,0 +1,40 @@
+services:
+  web:
+    build:
+      context: .
+      target: production
+    restart: unless-stopped
+    ports:
+      - "${APP_PORT:-3310}:3000"
+    environment:
+      NODE_ENV: production
+      APP_PORT: 3000
+      JWT_SECRET: ${JWT_SECRET:?JWT_SECRET obligatoire}
+      CLIENT_URL: ${CLIENT_URL:?CLIENT_URL obligatoire}
+      DB_HOST: database
+      DB_PORT: 3306
+      DB_USER: ${DB_USER:?DB_USER obligatoire}
+      DB_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD obligatoire}
+      DB_NAME: ${DB_NAME:?DB_NAME obligatoire}
+    depends_on:
+      database:
+        condition: service_healthy
+
+  database:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_NAME:?DB_NAME obligatoire}
+      MYSQL_USER: ${DB_USER:?DB_USER obligatoire}
+      MYSQL_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD obligatoire}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:?DB_ROOT_PASSWORD obligatoire}
+    volumes:
+      - mysql_prod_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  mysql_prod_data:

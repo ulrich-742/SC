@@ -1,0 +1,26 @@
+@media screen and (min-width: 1024px) {
+  .reservations {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  .reservations__title {
+    font-size: 2rem;
+    font-family: var(--font-title);
+    margin-bottom: 2rem;
+  }
+  .reservations__tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .reservation__tab {
+    min-width: 180px;
+  }
+  .reservations__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 1.5rem;
+  }
+}

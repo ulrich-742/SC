@@ -1,0 +1,128 @@
+.avis-confirmation {
+  min-height: 100vh;
+  background-color: var(--gray-50);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  gap: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Confetti dots ── */
+
+.avis-confirmation__confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.avis-confirmation__dot {
+  position: absolute;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+}
+
+.avis-confirmation__dot--red {
+  background-color: #e74c3c;
+  top: 18%;
+  left: 20%;
+}
+
+.avis-confirmation__dot--blue {
+  background-color: #3498db;
+  top: 14%;
+  right: 25%;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.avis-confirmation__dot--yellow {
+  background-color: #f1c40f;
+  top: 30%;
+  left: 12%;
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.avis-confirmation__dot--green {
+  background-color: #2ecc71;
+  top: 12%;
+  left: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.avis-confirmation__dot--orange {
+  background-color: #e67e22;
+  top: 25%;
+  right: 15%;
+  width: 0.625rem;
+  height: 0.625rem;
+}
+
+/* ── Icon ── */
+
+.avis-confirmation__icon {
+  color: #2ecc71;
+  font-size: 5rem;
+  flex-shrink: 0;
+}
+
+/* ── Text ── */
+
+.avis-confirmation__title {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--black);
+  text-align: center;
+  margin: 0;
+}
+
+.avis-confirmation__subtitle {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--gray-500);
+  text-align: center;
+  line-height: 1.6;
+  max-width: 20rem;
+  margin: 0;
+}
+
+/* ── Buttons ── */
+
+.avis-confirmation__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  width: 100%;
+  max-width: 20rem;
+  margin-top: 1rem;
+}
+
+.avis-confirmation__btn {
+  width: 100%;
+  padding: 0.875rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+}
+
+.avis-confirmation__btn--primary {
+  background-color: var(--gold-dark);
+  color: var(--white);
+}
+
+.avis-confirmation__btn--secondary {
+  background-color: var(--white);
+  color: var(--black);
+  border: 1px solid var(--gray-200);
+}

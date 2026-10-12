@@ -1,0 +1,163 @@
+.NavBarHair-main {
+  background-color: var(--black);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 100vh;
+  width: 39vw;
+  color: var(--gray-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  overflow-y: auto;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 100;
+
+  h1 {
+    text-align: center;
+    margin-top: 3rem;
+  }
+  h3 {
+    font-family: var(--font-title);
+    font-size: 15px;
+    color: var(--gray-600);
+    width: 100%;
+    text-align: start;
+    margin-top: 40px;
+  }
+  .NavBarHair-menu {
+    margin-top: 15px;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: var(--font-title);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    &.active {
+      color: var(--black);
+      border: 8px solid var(--warning);
+      background-color: var(--warning);
+      border-radius: 5px;
+    }
+  }
+}
+
+.NavBarHair-main.open {
+  transform: translateX(0);
+}
+
+.button_Nav {
+  background-color: var(--gray-50);
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  z-index: 1000;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: var(--warning);
+  justify-content: center;
+  padding: 5px;
+  display: flex;
+  border-radius: 50%;
+}
+
+.NavBarHair-main {
+  transform: translateX(-100%);
+}
+
+.NavBarHair-main.open {
+  transform: translateX(0);
+}
+
+.NavBarHair-brand {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.NavBarHair-brand__logo {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: 0.05em;
+}
+
+.NavBarHair-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0 1.25rem;
+  margin-top: 2.5rem;
+  border-bottom: 1px solid var(--gray-700, rgba(255, 255, 255, 0.1));
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.NavBarHair-profile__avatar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: var(--gold-soft);
+  border: 2px solid var(--warning);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.NavBarHair-profile__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.NavBarHair-profile__avatar span {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gold-dark);
+}
+
+.NavBarHair-profile__name {
+  font-family: var(--font-title);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--white);
+  text-align: center;
+}
+
+.NavBarHair-menu--logout {
+  margin-top: auto;
+  margin-bottom: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--error);
+  font-family: var(--font-body);
+}
+
+
+.NavBarHair-main {
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .NavBarHair-main {
+    width: 280px;
+  }
+}

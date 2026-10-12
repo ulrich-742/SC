@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [develop, dev, main]
+  pull_request:
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run check-types --workspaces --if-present
+      - run: npm test -- --runInBand
+        env:
+          JWT_SECRET: test-only-secret-never-used-in-production
+          NODE_ENV: test
+      - run: npm run build

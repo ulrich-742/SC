@@ -1,0 +1,125 @@
+.footer {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    display: block;
+    margin-top: 1rem;
+    background: linear-gradient(135deg, #2a2119, #5b4425, #b0893f);
+    color: var(--white);
+  }
+  .footer__description {
+    font-family: var(--font-body);
+    line-height: 1.7;
+  }
+  .footer__container {
+    max-width: 1300px;
+    margin: auto;
+
+    padding: 4rem 2rem;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 5rem;
+  }
+  .footer__brand {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer__brand-name {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-title);
+  }
+  .footer__brand p {
+    margin-bottom: 1.5rem;
+    color: var(--white);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    max-width: 320px;
+  }
+
+  .footer__description {
+    max-width: 340px;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .footer__socials {
+    display: flex;
+    gap: 1rem;
+  }
+  .footer__social {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+  }
+
+  .footer__social svg {
+    font-size: 1.3rem;
+  }
+
+  .footer__social:hover {
+    background: var(--gold-dark);
+    transform: translateY(-3px);
+  }
+  .footer__column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer__column h3 {
+    margin-bottom: 1.8rem;
+
+    font-size: 1.2rem;
+
+    font-family: var(--font-title);
+  }
+
+  .footer__column a {
+    color: rgba(255, 255, 255, 0.85);
+    font-family: var(--font-body);
+    text-decoration: none;
+
+    margin-bottom: 1rem;
+
+    transition: 0.25s;
+  }
+
+  .footer__column a:hover {
+    color: white;
+
+    padding-left: 10px;
+  }
+  .footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    text-align: center;
+
+    padding: 1.5rem;
+
+    font-size: 0.9rem;
+
+    color: var(--gray-300);
+    font-family: var(--font-body);
+  }
+}

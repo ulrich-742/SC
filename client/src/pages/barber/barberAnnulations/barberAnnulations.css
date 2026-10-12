@@ -1,0 +1,208 @@
+.barber-annulations {
+  background-color: var(--gray-50);
+  min-height: 100vh;
+  padding: 4rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ── Header ── */
+
+.barber-annulations__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.barber-annulations__title {
+  font-family: var(--font-title);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.barber-annulations__subtitle {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+}
+
+/* ── Tab ── */
+
+.barber-annulations__tab {
+  display: flex;
+}
+
+.barber-annulations__tab-active {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: var(--radius-md);
+  font-family: var(--font-title);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* ── Empty ── */
+
+.barber-annulations__empty {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--gray-400);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* ── List ── */
+
+.barber-annulations__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.barber-annulations__card {
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.barber-annulations__avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.barber-annulations__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.barber-annulations__name {
+  font-family: var(--font-title);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.barber-annulations__prestation {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+}
+
+.barber-annulations__date {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--gray-400);
+}
+
+/* ── Actions ── */
+
+.barber-annulations__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.barber-annulations__badge {
+  background-color: #fde8e8;
+  color: #e53e3e;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+.barber-annulations__btn-relancer {
+  background-color: var(--white);
+  color: var(--black);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 0.35rem 0.875rem;
+  font-family: var(--font-title);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.barber-annulations__btn-relancer:hover {
+  border-color: var(--gold-dark);
+  color: var(--gold-dark);
+}
+
+/* ── Conseil ── */
+
+.barber-annulations__conseil {
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  margin-top: auto;
+}
+
+.barber-annulations__conseil-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.barber-annulations__conseil-icon {
+  color: var(--gold-dark);
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.barber-annulations__conseil-text p {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+  line-height: 1.5;
+}
+
+.barber-annulations__btn-relancer-tous {
+  background-color: var(--gold-dark);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0.6rem 1rem;
+  font-family: var(--font-title);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.barber-annulations__btn-relancer-tous:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

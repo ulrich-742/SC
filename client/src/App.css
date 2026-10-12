@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--gray-50);
+  font-family: var(--font-body);
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root,
+main {
+  min-height: 100vh;
+  min-width: 0;
+}
+
+:root {
+  --black: #0f0f11;
+  --white: #ffffff;
+
+  --gold: #c8a46b;
+  --gold-dark: #a87c35;
+  --gold-soft: #f5ede0;
+
+  --beige: #f5f2ed;
+  --gray-900: #2b2b2d;
+  --gray-600: #6b6b6f;
+  --gray-300: #bdbdbd;
+  --gray-100: #f1f1f1;
+  --gray-50: #fafafa;
+
+  --success: #28a745;
+  --error: #e53935;
+  --warning: #f5a623;
+  --info: #3b82f6;
+
+  --main-gradient: linear-gradient(90deg, var(--black) 0%, var(--gold) 100%);
+  --second-gradient: linear-gradient(90deg, var(--beige) 0%, var(--white) 100%);
+  --font-title: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  --shadow-sm: 0px 1px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0px 2px 8px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0px 4px 16px rgba(0, 0, 0, 0.16);
+
+  --transition: all 0.2s ease;
+}

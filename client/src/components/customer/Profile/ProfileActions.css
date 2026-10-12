@@ -1,0 +1,98 @@
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.profile-actions__button,
+.profile-actions__button-delete {
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: 3.25rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.profile-actions__button {
+  background: var(--gray-50);
+  color: var(--gray-900);
+}
+
+.profile-actions__button-delete {
+  background: var(--white);
+  border-color: rgba(229, 57, 53, 0.32);
+  color: var(--error);
+}
+
+.profile-actions__button:hover {
+  border-color: var(--gold);
+  background: var(--gold-soft);
+  color: var(--black);
+  transform: translateY(-1px);
+}
+
+.profile-actions__button-delete:hover {
+  background: #fef2f2;
+  border-color: var(--error);
+  color: var(--error);
+  transform: translateY(-1px);
+}
+
+.profile-actions__button span,
+.profile-actions__button-delete span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.profile-actions__icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+}
+
+.modal-content__message {
+  color: var(--black);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .profile-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile-actions {
+    box-sizing: border-box;
+    position: sticky;
+    top: 2rem;
+    display: flex;
+    align-self: start;
+    padding: 1rem;
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    background: var(--white);
+    box-shadow: var(--shadow-md);
+  }
+
+  .profile-actions__button,
+  .profile-actions__button-delete {
+    min-height: 3.75rem;
+    padding-inline: 0.95rem;
+  }
+}

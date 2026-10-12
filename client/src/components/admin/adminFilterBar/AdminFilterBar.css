@@ -1,0 +1,54 @@
+.admin-users-filters-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  background-color: var(--white);
+  padding: 14px 20px;
+  border-radius: var(--radius-md,);
+  box-shadow: var(--shadow-sm);
+
+  .search-input-wrapper,
+  .filter-select-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .search-input-wrapper {
+    flex: 1;
+    max-width: 400px;
+  }
+
+  .filters-controls-wrapper {
+    display: flex;
+    gap: 12px;
+  }
+
+  .search-icon,
+  .filter-icon {
+    position: absolute;
+    left: 12px;
+    color: var(--gold);
+    pointer-events: none;
+    font-size: 16px;
+  }
+
+  .filter-input,
+  .filter-select {
+    width: 100%;
+    padding: 10px 12px 10px 38px;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    color: var(--black);
+    background-color: var(--white);
+    transition: var(--transition);
+    outline: none;
+    text-transform: capitalize;
+    &:focus {
+      border-color: var(--gold);
+    }
+  }
+}

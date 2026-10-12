@@ -1,0 +1,283 @@
+.barber-signalement {
+  background-color: var(--gray-50);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-height: 100vh;
+}
+
+.barber-signalement__subtitle {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.barber-signalement__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.barber-signalement__section-title {
+  font-family: var(--font-title);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--black);
+}
+
+/* ── Target cards (Un client / Un salon) ── */
+
+.barber-signalement__target-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.barber-signalement__target-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.875rem;
+  background-color: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+  transition: var(--transition);
+}
+
+.barber-signalement__target-card--selected {
+  border-color: var(--gold-dark);
+}
+
+.barber-signalement__target-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background-color: var(--gold-dark);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.barber-signalement__target-label {
+  font-family: var(--font-title);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.barber-signalement__target-desc {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  line-height: 1.4;
+}
+
+/* ── Type cards ── */
+
+.barber-signalement__type-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.barber-signalement__type-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.875rem;
+  background-color: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+  transition: var(--transition);
+}
+
+.barber-signalement__type-card--selected {
+  border-color: var(--gold-dark);
+}
+
+.barber-signalement__type-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background-color: var(--white);
+  color: var(--gold-dark);
+  border: 1.5px solid var(--gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.barber-signalement__type-content {
+  flex: 1;
+}
+
+.barber-signalement__type-label {
+  font-family: var(--font-title);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.3;
+}
+
+.barber-signalement__type-desc {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  color: var(--gray-500);
+  margin-top: 0.2rem;
+  line-height: 1.3;
+}
+
+/* ── Radio indicator ── */
+
+.barber-signalement__radio {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 50%;
+  border: 1.5px solid var(--gray-300);
+  background-color: var(--white);
+  flex-shrink: 0;
+}
+
+.barber-signalement__target-card--selected .barber-signalement__radio,
+.barber-signalement__type-card--selected .barber-signalement__radio {
+  border-color: var(--gold-dark);
+  background-color: var(--gold-dark);
+  box-shadow: inset 0 0 0 3px var(--white);
+}
+
+/* ── Form ── */
+
+.barber-signalement__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.barber-signalement__textarea-wrapper {
+  position: relative;
+}
+
+.barber-signalement__textarea {
+  width: 100%;
+  height: 7.5rem;
+  padding: 0.875rem 1rem 2rem;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--black);
+  background-color: var(--white);
+  resize: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.barber-signalement__textarea:focus {
+  border-color: var(--gold-dark);
+}
+
+.barber-signalement__char-count {
+  position: absolute;
+  bottom: 0.625rem;
+  right: 0.875rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--gray-400);
+}
+
+/* ── Preuves ── */
+
+.barber-signalement__proof-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+  margin-top: -0.25rem;
+}
+
+.barber-signalement__file-upload {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 1rem;
+  background-color: #fdf6e3;
+  border: 1px solid var(--gold-dark);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+
+.barber-signalement__file-icon {
+  font-size: 1.375rem;
+  color: var(--gold-dark);
+}
+
+.barber-signalement__file-label {
+  font-family: var(--font-title);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.barber-signalement__file-desc {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  margin-top: 0.125rem;
+}
+
+.barber-signalement__file-arrow {
+  margin-left: auto;
+  font-size: 1.25rem;
+  color: var(--gray-400);
+}
+
+/* ── Submit ── */
+
+.barber-signalement__submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--gold-dark);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.barber-signalement__submit-btn:hover {
+  opacity: 0.9;
+}
+
+.barber-signalement__footer {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--gray-400);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}

@@ -1,0 +1,264 @@
+.editEventModal-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 15, 17, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-family: var(--font-body);
+
+  .modal-container {
+    box-sizing: border-box;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    width: 750px;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 20px 24px;
+
+      h2 {
+        margin: 0 0 4px 0;
+        font-size: 1.25rem;
+        font-family: var(--font-title);
+        color: var(--black);
+      }
+
+      p {
+        margin: 0;
+        font-size: 0.875rem;
+        color: var(--gray-600);
+      }
+
+      .close-btn {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        color: var(--gray-300);
+        transition: var(--transition);
+
+        &:hover {
+          color: var(--black);
+        }
+      }
+    }
+
+    .modal-body {
+      padding: 0 24px 20px 24px;
+      box-sizing: border-box;
+
+      .modal-grid-top {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 24px;
+
+        .avatar-section {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+
+          .event-cover-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin-bottom: 12px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+            background: var(--gray-50);
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+
+            .image-placeholder {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              height: 100%;
+              gap: 8px;
+              color: var(--gray-400);
+              font-size: 0.75rem;
+            }
+          }
+
+          .change-photo-btn {
+            background: var(--white);
+            border: 1px solid var(--gray-300);
+            padding: 6px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            cursor: pointer;
+            font-weight: 500;
+            margin-bottom: 6px;
+            transition: var(--transition);
+
+            &:hover {
+              background: var(--gray-50);
+              border-color: var(--gray-600);
+            }
+          }
+        }
+
+        .form-fields-top {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+        }
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        label {
+          font-size: 0.8rem;
+          font-weight: 500;
+          color: var(--gray-900);
+        }
+
+        input,
+        select,
+        textarea {
+          box-sizing: border-box;
+          padding: 8px 12px;
+          border: 1px solid var(--gray-300);
+          border-radius: var(--radius-sm);
+          font-size: 0.875rem;
+          color: var(--black);
+          outline: none;
+          background-color: var(--gray-50);
+          font-family: var(--font-body);
+          transition: var(--transition);
+          width: 100%;
+
+          &:focus {
+            border-color: var(--gold);
+            background-color: var(--white);
+          }
+        }
+
+        textarea {
+          font-family: var(--font-body);
+          line-height: 1.4;
+        }
+
+        .input-icon-container {
+          display: flex;
+          align-items: center;
+          border: 1px solid var(--gray-300);
+          border-radius: var(--radius-sm);
+          background-color: var(--gray-50);
+          padding: 0 12px;
+          transition: var(--transition);
+
+          &:focus-within {
+            border-color: var(--gold);
+            background-color: var(--white);
+          }
+
+          input {
+            border: none;
+            background: transparent;
+            width: 100%;
+            padding: 10px 6px;
+
+            &:focus {
+              background: transparent;
+            }
+          }
+        }
+
+        &.full-width {
+          grid-column: span 2;
+        }
+      }
+
+      .modal-divider {
+        border: 0;
+        height: 1px;
+        background: var(--gray-100);
+        margin: 20px 0;
+      }
+
+      .section-title {
+        font-size: 0.95rem;
+        font-family: var(--font-title);
+        color: var(--black);
+        margin: 0 0 16px 0;
+      }
+
+      .modal-grid-middle {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+    }
+
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      padding: 16px 24px;
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-100);
+      .action-bouton {
+        padding: 8px 16px;
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+        font-size: 0.875rem;
+        transition: var(--transition);
+      }
+      .cancel-btn {
+        background: var(--white);
+        border: 1px solid var(--gray-300);
+
+        &:hover {
+          background: var(--gray-100);
+          color: var(--black);
+        }
+      }
+
+      .save-btn {
+        background: var(--gold);
+        color: var(--white);
+        border: none;
+
+        &:hover {
+          background: var(--gold-dark);
+          box-shadow: var(--shadow-sm);
+        }
+      }
+      .delete-btn {
+        background: var(--white);
+        border: 1px solid var(--error);
+        color: var(--error);
+        outline: none;
+        box-shadow: none;
+
+        &:hover {
+          background: var(--error);
+          color: var(--white);
+          border-color: var(--error);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.stats-cards-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.dashboard-reservations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+  padding: 32px;
+  border-radius: 24px;
+  box-shadow: var(--shadow-lg);
+}
+
+.h2{
+  margin:20rem;
+}
+.dashboard {
+  margin-top:54px;
+  width: 100%;
+  background-color: var(--gray-100);
+}
+
+@media (min-width: 1024px) {
+  .dashboard {
+    width: 60%;
+    margin: 100px auto;
+    padding: 2rem;
+  }
+
+  .stats-cards-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  
+}

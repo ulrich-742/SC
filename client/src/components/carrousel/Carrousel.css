@@ -1,0 +1,206 @@
+.carrousel {
+  width: 100%;
+}
+
+.carrousel__list {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.5rem;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: none;
+}
+
+@media (max-width: 370px) {
+  .carrousel__card {
+    flex-basis: min(78vw, 160px);
+    min-width: min(78vw, 160px);
+  }
+
+  .carrousel__footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .carrousel__btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.carrousel__list::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Carte ── */
+
+.carrousel__card {
+  flex: 0 0 170px;
+  min-width: 170px;
+  border-radius: 0.75rem;
+  overflow: visible;
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  box-shadow: var(--shadow-sm);
+  scroll-snap-align: start;
+  position: relative;
+}
+
+/* ── Desktop : grille 4 colonnes ── */
+
+@media (min-width: 768px) {
+  .carrousel__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+
+  .carrousel__card {
+    flex: none;
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+/* ── Badge rating ── */
+
+.carrousel__rating-badge {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: var(--gold-soft);
+  color: var(--gold-dark);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 2rem;
+}
+
+.carrousel__star {
+  font-size: 0.65rem;
+  color: var(--gold-dark);
+}
+
+/* ── Image / placeholder ── */
+
+.carrousel__image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  background: var(--gray-100);
+  overflow: hidden;
+}
+
+.carrousel__initials {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-title);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold-dark);
+  opacity: 0.6;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.carrousel__image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Contenu ── */
+
+.carrousel__content {
+  padding: 0.65rem 0.75rem 0.75rem;
+}
+
+.carrousel__name {
+  margin: 0 0 0.25rem;
+  font-family: var(--font-title);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--black);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.carrousel__city {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--gray-600);
+  margin-bottom: 0.6rem;
+}
+
+.location-icon {
+  width: 11px;
+  height: 11px;
+  color: var(--gold-dark);
+  flex-shrink: 0;
+}
+
+/* ── Prix + Bouton ── */
+
+.carrousel__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.carrousel__price {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.carrousel__btn {
+  padding: 0.4rem 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--gold-dark);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.carrousel__card {
+  flex: 0 0 170px;
+  scroll-snap-align: start;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: var(--white);
+
+  border: 2px solid transparent;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.carrousel__card--selected {
+  border-color: var(--gold-dark);
+}

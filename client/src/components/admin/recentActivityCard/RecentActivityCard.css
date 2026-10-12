@@ -1,0 +1,74 @@
+.recent-activity-card-main {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  box-sizing: border-box;
+
+  .activity-card-header {
+    margin-bottom: 20px;
+
+    h3 {
+      font-family: var(--font-title);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin: 0;
+    }
+  }
+
+  .activity-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .activity-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-body);
+      gap: 12px;
+
+      .activity-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .activity-icon {
+          font-size: 16px;
+          flex-shrink: 0;
+
+          &.icon-success {
+            color: var(--success);
+          }
+          &.icon-info {
+            color: var(--info);
+          }
+          &.icon-error {
+            color: var(--error);
+          }
+          &.icon-warning {
+            color: var(--gold);
+          }
+          &.icon-gray {
+            color: var(--gray-300);
+          }
+        }
+
+        .activity-text {
+          font-size: 13px;
+          color: var(--gray-900);
+          font-weight: 500;
+          line-height: 1.4;
+        }
+      }
+
+      .activity-time {
+        font-size: 11px;
+        color: var(--gray-600);
+        white-space: nowrap;
+      }
+    }
+  }
+}

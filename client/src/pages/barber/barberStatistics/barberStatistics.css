@@ -1,0 +1,219 @@
+.barber-stats {
+  background-color: var(--gray-50);
+  min-height: 100vh;
+  padding: 1rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ── Header ── */
+
+.barber-stats__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.barber-stats__back,
+.barber-stats__filter {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+}
+
+.barber-stats__filter {
+  color: var(--gold-dark);
+}
+
+.barber-stats__title {
+  font-family: var(--font-title);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--black);
+}
+
+/* ── Stat cards ── */
+
+.barber-stats__cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.barber-stats__card {
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.barber-stats__card-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+.barber-stats__card-value {
+  font-family: var(--font-title);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.barber-stats__card-trend {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+}
+
+.barber-stats__card-trend--up {
+  color: #2ecc71;
+}
+
+/* ── Section ── */
+
+.barber-stats__section {
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.barber-stats__section-title {
+  font-family: var(--font-title);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 0.75rem;
+}
+
+.barber-stats__chart-wrapper {
+  width: 100%;
+}
+
+/* ── Donuts ── */
+
+.barber-stats__donuts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.barber-stats__donut-card {
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.barber-stats__donut-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.barber-stats__donut-chart {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.barber-stats__donut-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+}
+
+.barber-stats__donut-total {
+  font-family: var(--font-title);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--black);
+  white-space: nowrap;
+}
+
+.barber-stats__donut-label {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  color: var(--gray-500);
+}
+
+/* ── Legend ── */
+
+.barber-stats__donut-legend {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.barber-stats__legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.barber-stats__legend-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.barber-stats__legend-name {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  color: var(--gray-600);
+  line-height: 1.3;
+}
+
+/* ── Bottom message ── */
+
+.barber-stats__message {
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.barber-stats__message-icon {
+  color: var(--gold-dark);
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.barber-stats__message-title {
+  font-family: var(--font-title);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 0.25rem;
+}
+
+.barber-stats__message-text {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+  line-height: 1.5;
+}
+
+.barber-stats__message-highlight {
+  color: var(--gold-dark);
+  font-weight: 600;
+}

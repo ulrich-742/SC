@@ -1,0 +1,28 @@
+export type Appointment = {
+  id_appointment: number;
+  appointment_date: string;
+  status: "en attente" | "confirmé" | "terminé" | "annulé";
+  location_type: string;
+  create_time: string;
+  id_prestation: number;
+  id_user_barber: number;
+  id_user_customer: number;
+  barber_name: string;
+  barber_avatar: string;
+  barber_phone: string;
+  barber_postal_code: string;
+  barber_city: string;
+  barber_adress: string;
+  barber_email: string;
+  customer_firstname: string;
+  customer_lastname: string;
+  customer_avatar: string;
+  customer_phone: string;
+  customer_postal_code: string;
+  customer_city: string;
+  customer_adress: string;
+  customer_email: string;
+  prestation_name: string;
+  duration_minutes: number;
+  price: number;
+};

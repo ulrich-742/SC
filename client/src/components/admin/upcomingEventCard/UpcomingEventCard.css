@@ -1,0 +1,106 @@
+.upcoming-event-card-main {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  box-sizing: border-box;
+
+  .event-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h3 {
+      font-family: var(--font-title);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin: 0;
+    }
+
+    .see-all-link {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+
+      &:hover {
+        text-decoration: underline;
+        color: var(--gold-dark);
+      }
+    }
+  }
+
+  .event-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .event-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .event-info {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .event-image {
+          width: 52px;
+          height: 52px;
+          border-radius: var(--radius-md);
+          object-fit: cover;
+          background-color: var(--gray-100);
+        }
+
+        .event-text {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+          font-family: var(--font-body);
+
+          .event-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-900);
+          }
+
+          .event-details {
+            font-size: 11px;
+            color: var(--gray-600);
+          }
+        }
+      }
+
+      .event-status-badge {
+        font-family: var(--font-body);
+        font-size: 12px;
+        font-weight: 500;
+        padding: 4px 10px;
+        border-radius: var(--radius-sm);
+        text-align: center;
+        min-width: 65px;
+
+        &.publié {
+          background-color: #eaf7ed;
+          color: var(--success);
+        }
+
+        &.brouillon {
+          background-color: var(--gray-100);
+          color: var(--gray-600);
+        }
+
+        &.plannifié {
+          background-color: var(--gold-soft);
+          color: var(--warning);
+        }
+      }
+    }
+  }
+}

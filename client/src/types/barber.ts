@@ -1,0 +1,20 @@
+export type Barber = {
+  id_user: number;
+  name: string;
+  description: string;
+  postal_code: string;
+  city: string;
+  adress: string;
+  delivery_radius: number;
+  status: string;
+  create_time: string;
+  avatar_url: string;
+  email: string;
+  phone: string;
+  birthday: string;
+  genre: string;
+  annotations?: string;
+  avg_rating?: number | null;
+  review_count?: number;
+  min_price?: number | null;
+};

@@ -1,0 +1,71 @@
+.adminNavBar-main {
+  background-color: var(--black);
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 100vh;
+  width: 15vw;
+  color: var(--gray-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  .adminNavBar-icon {
+    width: auto;
+    height: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-family: var(--font-title);
+    font-size: 18px;
+    color: var(--gray-600);
+    width: 100%;
+    text-align: start;
+    margin-top: 50px;
+  }
+  .adminNavBar-menu {
+    color: var(--gray-300);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: var(--font-title);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 10px solid var(--black);
+    border-radius: 5px;
+    &.active {
+      color: var(--black);
+      border: 10px solid var(--warning);
+      background-color: var(--warning);
+    }
+  }
+  .adminNavBar-logout {
+    margin-top: auto;
+    margin-bottom: 2rem;
+    background: none;
+    cursor: pointer;
+    color: var(--gray-300);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: var(--font-title);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 10px solid var(--black);
+    border-radius: 5px;
+    &:hover {
+      color: var(--black);
+      border: 10px solid var(--warning);
+      background-color: var(--warning);
+    }
+  }
+}
