@@ -5,10 +5,11 @@ import type { RequestHandler } from "express";
 import multer from "multer";
 import databaseClient from "../../../database/client";
 
-const uploadsDir = path.join(
-  __dirname,
-  "../../../../server/public/uploads/avatars",
-);
+const uploadsRoot =
+  process.env.UPLOADS_ROOT ??
+  path.join(__dirname, "../../../../server/public/uploads");
+
+const uploadsDir = path.join(uploadsRoot, "avatars");
 if (!fs.existsSync(uploadsDir)) {
   fs.mkdirSync(uploadsDir, { recursive: true });
 }

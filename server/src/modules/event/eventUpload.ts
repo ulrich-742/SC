@@ -3,10 +3,11 @@ import path from "node:path";
 import { randomUUID } from "node:crypto";
 import multer from "multer";
 
-const uploadsDir = path.join(
-  __dirname,
-  "../../../../server/public/uploads/events",
-);
+const uploadsRoot =
+  process.env.UPLOADS_ROOT ??
+  path.join(__dirname, "../../../../server/public/uploads");
+
+const uploadsDir = path.join(uploadsRoot, "events");
 
 if (!fs.existsSync(uploadsDir)) {
   fs.mkdirSync(uploadsDir, { recursive: true });

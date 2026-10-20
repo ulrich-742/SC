@@ -10,6 +10,7 @@ services:
       NODE_ENV: production
       APP_PORT: 3000
       JWT_SECRET: ${JWT_SECRET:?JWT_SECRET obligatoire}
+      UPLOADS_ROOT: /app/server/public/uploads
       CLIENT_URL: ${CLIENT_URL:?CLIENT_URL obligatoire}
       DB_HOST: database
       DB_PORT: 3306

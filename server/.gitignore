@@ -2,3 +2,6 @@ node_modules
 coverage
 .env
 public/uploads/
+docs/SECURITY.md
+docs/TESTING.md
+presentation-secare/

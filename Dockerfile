@@ -14,7 +14,7 @@ WORKDIR /app
 COPY package*.json ./
 COPY server/package*.json server/
 COPY client/package*.json client/
-RUN npm ci --omit=dev
+RUN npm ci --omit=dev --ignore-scripts
 COPY --from=build /app/server/dist server/dist
 COPY --from=build /app/server/database server/database
 COPY --chown=node:node --from=build /app/server/public server/public
